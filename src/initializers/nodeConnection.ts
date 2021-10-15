@@ -1,7 +1,5 @@
 import { Initializer, log } from "actionhero";
-const { ApiPromise, WsProvider } = require('@polkadot/api');
-
-let api;
+import { task } from "actionhero";
 export class nodeConnection extends Initializer {
   constructor() {
     super();
@@ -12,16 +10,8 @@ export class nodeConnection extends Initializer {
   }
 
   async start() {
-    if(api) return api;
-  
-    const provider = new WsProvider('ws://polkadot-node-container:9944');
-
-    api = await ApiPromise.create({ provider });
-    
-    console.log("Creating new connection to node");
-    return api;
-
-    //log("I initialized", "debug", this.name);
+    await task.enqueue("Connect",{});
   }
-
+   
 }
+
