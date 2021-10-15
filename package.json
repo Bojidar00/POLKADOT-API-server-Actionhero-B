@@ -7,11 +7,12 @@
     "node": ">=8.0.0"
   },
   "dependencies": {
+    "@polkadot/api": "^6.3.1",
     "actionhero": "27.1.5",
-    "ws": "latest",
     "ioredis": "latest",
     "ioredis-mock": "latest",
-    "winston": "latest"
+    "winston": "latest",
+    "ws": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",

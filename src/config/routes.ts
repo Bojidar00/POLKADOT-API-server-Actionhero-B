@@ -5,6 +5,9 @@ export const DEFAULT = {
         { path: "/status", action: "status" },
         { path: "/swagger", action: "swagger" },
         { path: "/createChatRoom", action: "createChatRoom" },
+        { path: "/test", action: "testAction" },
+        { path: "/node/blocks", action: "LastBlock" },
+        
       ],
 
       /* ---------------------
