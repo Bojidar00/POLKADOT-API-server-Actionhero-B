@@ -16,10 +16,12 @@ export class LastBlock extends Action {
 
   async run() {
     
-    connectApi.then((api) => {
-    api.rpc.chain
+    await connectApi.then((api) => {
+     api.rpc.chain
     .getBlock()
     .then((data) => {
+      console.log("now in last block");
+      console.log(data);
       return(data);
       //res.send(data.toHuman());
     })
