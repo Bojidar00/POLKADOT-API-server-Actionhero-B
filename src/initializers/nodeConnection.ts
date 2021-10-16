@@ -2,9 +2,7 @@ import { Initializer, log } from "actionhero";
 import { task } from "actionhero";
 const apiConnection = require('../modules/nodeConnection');
 
-const connectApi = apiConnection.getNodeConnection().then((api) => {
-  return api;
-});
+
 
 export class nodeConnection extends Initializer {
   constructor() {
