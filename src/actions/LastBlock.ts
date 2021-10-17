@@ -13,16 +13,17 @@ export class LastBlock extends Action {
   }
 
   async run() {
+    
     console.log("now in last block  1");
     await apiConnection.getNodeConnection().then((api) => {
      api.rpc.chain
     .getBlock()
-    .then((block) => {
+    .then((data) => {
       console.log("now in last block  2");
-      console.log(block);
-      return(block.toHuman());
+      console.log(data);
+      return {d: JSON.stringify(data)};
       
-      //res.send(data.toHuman());
+      
     })
     .catch((err) => {
       return("Some error occured");
