@@ -17,10 +17,11 @@ export class LastBlock extends Action {
     await apiConnection.getNodeConnection().then((api) => {
      api.rpc.chain
     .getBlock()
-    .then((data) => {
+    .then((block) => {
       console.log("now in last block  2");
-      console.log(data);
-      return(data);
+      console.log(block);
+      return(block.toHuman());
+      
       //res.send(data.toHuman());
     })
     .catch((err) => {

@@ -14,10 +14,10 @@ export class nodeConnection extends Initializer {
   }
 
   async start() {
-   /* const connectApi = apiConnection.getNodeConnection().then((api) => {
+    const connectApi = apiConnection.getNodeConnection().then((api) => {
       return api;
     });
-    */
+    
   }
    
 }
