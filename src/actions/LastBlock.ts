@@ -13,14 +13,15 @@ export class LastBlock extends Action {
   }
 
   async run() {
-    
+      var a;
     console.log("now in last block  1");
     await apiConnection.getNodeConnection().then((api) => {
      api.rpc.chain
     .getBlock()
     .then((data) => {
       console.log("now in last block  2");
-      console.log(data);
+      console.log(JSON.stringify(data));
+      a=data.block;
       return {d: JSON.stringify(data)};
       
       
@@ -31,7 +32,7 @@ export class LastBlock extends Action {
       
     });
   });
-
+       return {b:  JSON.stringify(a)};
     //return { hash: "000000000000000000" };
   }
 }
