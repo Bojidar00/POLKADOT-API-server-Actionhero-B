@@ -9,7 +9,7 @@ export class XBlocksAfterN extends Action {
   constructor() {
     super();
     this.name = "XBlocksAfterN";
-    this.description = "I am an API method which will return block by hash.";
+    this.description = "I am an API method which will return x blocks after n.";
     this.inputs = {
         x: { required: true},
         n: { required: true}

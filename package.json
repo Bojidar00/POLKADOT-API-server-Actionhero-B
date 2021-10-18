@@ -11,6 +11,7 @@
     "actionhero": "27.1.5",
     "ioredis": "latest",
     "ioredis-mock": "latest",
+    "pg": "^8.7.1",
     "winston": "latest",
     "ws": "latest"
   },
