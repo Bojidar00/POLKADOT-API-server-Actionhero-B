@@ -3,9 +3,7 @@ import { Action } from "actionhero";
 
 const apiConnection = require('../modules/nodeConnection');
 
-const connectApi = apiConnection.getNodeConnection().then((api) => {
-  return api;
-});
+
 
 
 export class LastBlock extends Action {
@@ -17,7 +15,9 @@ export class LastBlock extends Action {
   }
 
   async run() {
-    
+    const connectApi = apiConnection.getNodeConnection().then((api) => {
+      return api;
+    });
        return await connectApi.then(api => api.rpc.chain.getBlock());
   
   }

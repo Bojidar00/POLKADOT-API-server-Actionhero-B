@@ -7,10 +7,12 @@ export const DEFAULT = {
         { path: "/createChatRoom", action: "createChatRoom" },
         { path: "/node/blocks", action: "LastBlock" },
         { path: "/node/blocks/num/:number", action: "BlockHashByNumber" },
-        { path: "/node/blocks/hash/:hash", action: "BlockByHash" },
         { path: "/node/blocks/:x/:n", action: "XBlocksAfterN" },
         
       ],
+      post:[
+        { path: "/node/blocks/hash/", action: "BlockByHash" }
+      ]
 
       /* ---------------------
       For web clients (http and https) you can define an optional RESTful mapping to help route requests to actions.

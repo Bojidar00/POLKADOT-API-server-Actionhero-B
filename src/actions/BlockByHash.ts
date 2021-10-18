@@ -3,9 +3,7 @@ import { Action } from "actionhero";
 
 const apiConnection = require('../modules/nodeConnection');
 
-const connectApi = apiConnection.getNodeConnection().then((api) => {
-  return api;
-});
+
 
 
 export class BlockByHash extends Action {
@@ -20,7 +18,10 @@ export class BlockByHash extends Action {
   }
 
   async run({ params }) {
-    
+    const connectApi = apiConnection.getNodeConnection().then((api) => {
+        return api;
+      });
+      
        return await connectApi.then(api => api.rpc.chain.getBlockByHash(params.hash));
   
   }

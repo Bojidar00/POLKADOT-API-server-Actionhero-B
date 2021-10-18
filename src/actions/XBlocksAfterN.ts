@@ -3,9 +3,6 @@ import { Action } from "actionhero";
 
 const apiConnection = require('../modules/nodeConnection');
 
-const connectApi = apiConnection.getNodeConnection().then((api) => {
-  return api;
-});
 
 
 export class XBlocksAfterN extends Action {
@@ -21,6 +18,11 @@ export class XBlocksAfterN extends Action {
   }
 
   async run({ params }) {
+    const connectApi = apiConnection.getNodeConnection().then((api) => {
+        return api;
+      });
+      
+
     var x=params.x;
     var n=params.n;
     var blocks=[];
