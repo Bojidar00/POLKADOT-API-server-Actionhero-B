@@ -2,7 +2,7 @@ const dbConnection = require('./dbConnection');
 const apiConnection = require("./nodeConnection");
 
 
-
+const run =  () => {
 const connectDb = dbConnection.getDbConnection().then((db) => {
     db.connect().then(console.log("Connected to PostgreSQL from Server"));
     return db;
@@ -103,3 +103,5 @@ connect.then((api) => {
     }
   })();
 });
+}
+module.exports = { run };
