@@ -1,6 +1,6 @@
 
 import { Action } from "actionhero";
-const Lblock = require ("../modules/LastBlock");
+
 const apiConnection = require('../modules/nodeConnection');
 
 const connectApi = apiConnection.getNodeConnection().then((api) => {
