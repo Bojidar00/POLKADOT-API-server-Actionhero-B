@@ -9,7 +9,7 @@ export const DEFAULT = {
         { path: "/node/blocks/num/:number", action: "BlockHashByNumber" },
         { path: "/node/blocks/:x/:n", action: "XBlocksAfterN" },
         { path: "/node/address/balance/:account", action: "AccountBallance" },
-        { path: "/node/address/count/", action: "AccountsCount" },
+        { path: "/node/accounts/count/", action: "AccountsCount" },
         { path: "/node/address/transactions/:account", action: "AccountsTransactions" },
         { path: "/node/address/transactions/count/:account", action: "AccountsTransactionsCount" },
         { path: "/node/transactions/count/", action: "TransactionsCount" },
