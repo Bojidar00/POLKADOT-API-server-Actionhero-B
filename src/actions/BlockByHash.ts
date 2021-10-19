@@ -22,7 +22,7 @@ export class BlockByHash extends Action {
         return api;
       });
       
-       return await connectApi.then(api => api.rpc.chain.getBlockByHash(params.hash));
+       return await connectApi.then(api => api.rpc.chain.getBlock(params.hash));
   
   }
 }
