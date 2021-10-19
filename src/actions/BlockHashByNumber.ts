@@ -24,6 +24,6 @@ export class BlockHashByNumber extends Action {
     var blocks=[];
     blocks.push(await connectApi.then(api => api.rpc.chain.getBlockHash(params.number)));
    
-       return blocks;
+       return blocks[0];
   }
 }
