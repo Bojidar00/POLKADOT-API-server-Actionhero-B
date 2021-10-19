@@ -13,7 +13,10 @@
     "ioredis-mock": "latest",
     "pg": "^8.7.1",
     "winston": "latest",
-    "ws": "latest"
+    "ws": "latest",
+    "ts-jest": "latest",
+    "ts-node-dev": "latest",
+    "typescript": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
