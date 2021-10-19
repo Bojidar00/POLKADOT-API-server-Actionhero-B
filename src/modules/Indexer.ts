@@ -3,12 +3,12 @@ const apiConnection = require("./nodeConnection");
 
 
 const run =  () => {
-const connectDb = dbConnection.getDbConnection().then((db) => {
+dbConnection.getDbConnection().then((db) => {
     db.connect().then(console.log("Connected to PostgreSQL from Server"));
-    return db;
-});
+    
 
-connectDb.query('CREATE TABLE IF NOT EXISTS transactions(' + 
+
+db.query('CREATE TABLE IF NOT EXISTS transactions(' + 
   'hash VARCHAR(255) NOT NULL,' +
   'issigned BOOLEAN NOT NULL,' +
   'recipient VARCHAR(255) NOT NULL,' +
@@ -82,7 +82,7 @@ connect.then((api) => {
             //  console.log('NUMBER: ' + blockNumber);
 
             if (method == "transfer") {
-                connectDb.query(
+                db.query(
                 `INSERT INTO transactions(hash, issigned, recipient, amount, method, nonce, signature, sender, block_hash)` +
                   `VALUES('${String(hash)}', '${isSigned}', '${String(recipient)}', '${String(amount)}', 
                          '${String(method)}', '${String(nonce)}', '${String(signature)}', '${String(sender)}', '${String(blockHash)}')`,
@@ -102,6 +102,7 @@ connect.then((api) => {
       })();
     }
   })();
+});
 });
 }
 module.exports = { run };
