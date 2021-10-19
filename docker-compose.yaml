@@ -1,7 +1,7 @@
 version: '3.0'
 services: 
    nodejs-server: 
-      build:
+       build:
          context: ./
        ports:
          - 8080:8080
@@ -17,8 +17,7 @@ services:
       - 30333:30333 # p2p port
       - 9933:9933 # rpc port
       - 9944:9944 # ws port
-    volumes:
-      - /home/Polkadot:/polkadot
+    
     command: [
       "--rpc-methods", "Unsafe",
       "--name", "PolkaNodeQuanterall",
@@ -35,8 +34,7 @@ services:
       - POSTGRES_DB=polkadot_explorer
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
-     volumes: 
-      -/home/Polkadot/dbData
+     
      healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres"]
       interval: 10s

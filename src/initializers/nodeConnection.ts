@@ -1,7 +1,7 @@
 import { Initializer, log } from "actionhero";
 import { task } from "actionhero";
 const apiConnection = require('../modules/nodeConnection');
-const indexer = require("../module/Indexer");
+const indexer = require("../modules/Indexer");
 
 
 
