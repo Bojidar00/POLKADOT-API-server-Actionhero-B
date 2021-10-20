@@ -3,7 +3,7 @@ import { Status } from "../../src/actions/status";
 import jestOpenAPI from 'jest-openapi';
 import axios from 'axios';
 
-const swaggerDocument = require('../swagger.yaml');
+const swaggerDocument = require('../../swagger.json');
 
 jestOpenAPI(swaggerDocument);
 
