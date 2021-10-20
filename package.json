@@ -39,9 +39,8 @@
     "test": "jest",
     "tests": "jest",
     "pretest": "npm run build && npm run lint",
-    "build": "tsc --sourceMap false --declaration",
-    "lint": "prettier --check src/*/** __tests__/*/**",
-    "pretty": "prettier --write src/*/** __tests__/*/**"
+    "build": "tsc --sourceMap false --declaration"
+    
   },
   "jest": {
     "testEnvironment": "node",
