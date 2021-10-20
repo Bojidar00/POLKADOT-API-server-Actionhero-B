@@ -37,7 +37,7 @@
     "start": "node ./dist/server.js",
     "actionhero": "actionhero",
     "test": "jest",
-    "test1": "jest",
+    "tests": "jest",
     "pretest": "npm run build && npm run lint",
     "build": "tsc --sourceMap false --declaration",
     "lint": "prettier --check src/*/** __tests__/*/**",
