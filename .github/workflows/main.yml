@@ -34,4 +34,4 @@ jobs:
           npm install
           npm test
       - name: Run tests
-        run: npm test
+        run: npm test1
