@@ -17,9 +17,12 @@ services:
       - 30333:30333 # p2p port
       - 9933:9933 # rpc port
       - 9944:9944 # ws port
+    volumes:
+      - nodedata:/data
     
     command: [
       "--rpc-methods", "Unsafe",
+      "--base-path", "data",
       "--name", "PolkaNodeQuanterall",
       "--rpc-cors", "all",
       "--ws-external",
@@ -40,3 +43,5 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+volumes:
+  nodedata:
