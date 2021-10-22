@@ -18,7 +18,7 @@ export class nodeConnection extends Initializer {
     const connectApi = apiConnection.getNodeConnection().then((api) => {
       return api;
     });
-    //indexer.run();
+    indexer.run();
     
   }
    
