@@ -32,7 +32,7 @@ describe('GET /api/node/blocks/{x}/{nth}', () => {
       expect(res).toSatisfyApiSpec();
   });
 });
-/*
+
 describe('GET /api/node/blocks/num/{num}', () => {
   it('should satisfy OpenAPI spec', async() => {
       const num = '1000';
@@ -66,7 +66,7 @@ describe('GET /api/node/accounts/count/', () => {
       expect(res).toSatisfyApiSpec();
   });
 });
-
+/*
 describe('GET /api/node/address/transactions/count/{adr}', () => {
   it('should satisfy OpenAPI spec', async() => {
       const adr = '1743nDTMZisPgBCYSAgkUn1kVG7MePc9rvMEjoRNf4ipVkF';
