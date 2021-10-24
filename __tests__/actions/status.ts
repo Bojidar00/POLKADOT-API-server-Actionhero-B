@@ -11,8 +11,9 @@ const connectDb = dbConnection.getDbConnection().then((db) => {
   db.connect().then(console.log("Connected to PostgreSQL"));
   return db;
 });
-
-connectDb.query(
+connectDb.then(async db => { 
+  await
+db.query(
   `INSERT INTO transactions(hash, issigned, recipient, amount, method, nonce, signature, sender, block_hash)` +
     `VALUES('0x2261184f6bd42eb775f2a55477ce65e7d710a535a8c9da98441908bc2ba87170', 'true', '1743nDTMZisPgBCYSAgkUn1kVG7MePc9rvMEjoRNf4ipVkF', '50000', 
            'transfer', '1000', 'aaaaaaaaa', '12xtAYsRUrmbniiWQqJtECiBQrMn8AypQcXhnQAc6RB6XkLW', '0x527dbeb44ff53d4a805d72e1350ad76fd6e86116a1ba34c6d058f752bcc5db36')`,
@@ -23,7 +24,7 @@ connectDb.query(
          
       );
     else console.log("Error occured: " + err.message);
-  });
+  });});
 
 describe('GET api/node/blocks', () => {
   it('should satisfy OpenAPI spec', async() => {
