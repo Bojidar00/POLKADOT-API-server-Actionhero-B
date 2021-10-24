@@ -27,6 +27,18 @@ db.query('CREATE TABLE IF NOT EXISTS transactions(' +
   else console.log("Error occured: " + err.message);
 })
 
+db.query(
+  `INSERT INTO transactions(hash)` +
+    `VALUES('0x2261184f6bd42eb775f2a55477ce65e7d710a535a8c9da98441908bc2ba87170');`,
+  (err) => {
+    if (!err)
+      console.log(
+        "Inserted to DB test transaction: " 
+         
+      );
+    else console.log("Error occured: " + err.message);
+  })
+
 const connect = apiConnection.getNodeConnection().then((api) => {
   return api;
 });
