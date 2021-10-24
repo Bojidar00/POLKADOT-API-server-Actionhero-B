@@ -2,7 +2,8 @@
 
 
 ## Project requirements
-- Docker :
+- Docker :20.10.8
+- Docker compose: 1.29.2
 - node js :14.0.0
 
 
