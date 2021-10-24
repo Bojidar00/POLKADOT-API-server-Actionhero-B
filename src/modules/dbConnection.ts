@@ -14,6 +14,8 @@ const getDbConnection = async () => {
         port: process.env.DB_PORT || "5432",
         password: process.env.DB_PASS || "root",
         database: process.env.DB_DATABASE || "polkadot_explorer",
+        idleTimeoutMillis: 0,
+        connectionTimeoutMillis: 0,
     });
 
     
