@@ -15,7 +15,7 @@ connectDb.then(async db => {
   await
 db.query(
   `INSERT INTO transactions(hash)` +
-    `VALUES('0x2261184f6bd42eb775f2a55477ce65e7d710a535a8c9da98441908bc2ba87170')`,
+    `VALUES('0x2261184f6bd42eb775f2a55477ce65e7d710a535a8c9da98441908bc2ba87170');`,
   (err) => {
     if (!err)
       console.log(
