@@ -29,9 +29,11 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Set up docker containers
-        run: |
+        run: 
           docker-compose up -d
-          npm install
-          npm test
+          
+      
       - name: Run tests
-        run: npm run tests
+        run: |
+          npm install
+          npm run tests
