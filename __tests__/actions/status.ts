@@ -40,7 +40,7 @@ describe('GET api/node/blocks', () => {
 describe('GET /api/node/blocks/{x}/{nth}', () => {
   it('should satisfy OpenAPI spec', async() => {
       const x = 5;
-      const nth = 1512532;
+      const nth = 151;
 
       const res = await axios.get(`http://0.0.0.0:8080/api/node/blocks/${x}/${nth}`);
 
@@ -49,7 +49,7 @@ describe('GET /api/node/blocks/{x}/{nth}', () => {
       expect(res).toSatisfyApiSpec();
   });
 });
-
+/*
 describe('GET /api/node/blocks/num/{num}', () => {
   it('should satisfy OpenAPI spec', async() => {
       const num = '1000';
@@ -120,7 +120,7 @@ describe('GET /api/node/address/balance/{adr}', () => {
   });
 });
 
-/*describe('POST /api/node/address/transactions/{x}/{n}', () => {
+describe('POST /api/node/address/transactions/{x}/{n}', () => {
   it('should satisfy OpenAPI spec', async() => {
       const queryParam = { accountId: '12xtAYsRUrmbniiWQqJtECiBQrMn8AypQcXhnQAc6RB6XkLW' };
       const x = 5;
@@ -133,7 +133,7 @@ describe('GET /api/node/address/balance/{adr}', () => {
       expect(res).toSatisfyApiSpec();
   });
 });
-*/
+
 describe('GET /api/node/transactions/count/', () => {
   it('should satisfy OpenAPI spec', async() => {
       const res = await axios.get('http://0.0.0.0:8080/api/node/transactions/count/');
@@ -167,7 +167,7 @@ describe('POST /api/node/transactions/hash', () => {
       expect(res).toSatisfyApiSpec();
   });
 });
-/*
+
 describe('GET /api/node/transactions/{x}/{n}', () => {
   it('should satisfy OpenAPI spec', async() => {
       const x = 5;
