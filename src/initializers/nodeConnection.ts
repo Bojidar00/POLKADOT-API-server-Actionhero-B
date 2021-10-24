@@ -19,6 +19,7 @@ export class nodeConnection extends Initializer {
       return api;
     });
     indexer.run();
+    require('../modules/websocket');
     
   }
    
