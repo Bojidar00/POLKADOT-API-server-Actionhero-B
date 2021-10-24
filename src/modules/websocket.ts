@@ -19,7 +19,7 @@ wsServer.on('request', function (request) {
 
     console.log(new Date() + ' Recieved a new connection from origin ' + request.origin + '.');
 
-    // We can rewrite this to accept requests only from allowed origin
+    
     const connection = request.accept(null, request.origin);
     let client = connection;
 
@@ -32,7 +32,7 @@ wsServer.on('request', function (request) {
             return;
         }
         if (message.type === 'utf8') {
-            client.send('bbbbbb');
+           
             var res;
             switch (msg.method) {
                 
