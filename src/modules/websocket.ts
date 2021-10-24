@@ -1,7 +1,7 @@
 const webSocketsServerPort = 8000;
 const webSocketServer = require('websocket').server;
 const http = require('http');
-//const apis = require('./modules/wsApis');
+const apis = require('./modules/wsApis');
 
 
 
@@ -13,7 +13,7 @@ const wsServer = new webSocketServer({
     httpServer: server
 });
 
-//let cl = {};
+
 
 wsServer.on('request', function (request) {
 
@@ -34,7 +34,7 @@ wsServer.on('request', function (request) {
         if (message.type === 'utf8') {
             client.send('bbbbbb');
             var res;
-            /*switch (msg.method) {
+            switch (msg.method) {
                 
                 case 'rpc_getLastBlock':
                     res =await apis.LastBlock();
@@ -91,7 +91,7 @@ wsServer.on('request', function (request) {
                     
                     break;
             }
-           */ client.send(res);
+            client.send(res);
         }
     })
 })
