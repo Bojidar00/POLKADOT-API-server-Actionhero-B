@@ -2,28 +2,12 @@ import { Process, env, id, specHelper } from "actionhero";
 import { Status } from "../../src/actions/status";
 import jestOpenAPI from 'jest-openapi';
 import axios from 'axios';
-const dbConnection = require("../../src/modules/dbConnection");
+
 const swaggerDocument = require('../../swagger.json');
 
 jestOpenAPI(swaggerDocument);
 
-const connectDb = dbConnection.getDbConnection().then((db) => {
-  db.connect().then(console.log("Connected to PostgreSQL"));
-  return db;
-});
-connectDb.then(async db => { 
-  await
-db.query(
-  `INSERT INTO transactions(hash)` +
-    `VALUES('0x2261184f6bd42eb775f2a55477ce65e7d710a535a8c9da98441908bc2ba87170');`,
-  (err) => {
-    if (!err)
-      console.log(
-        "Inserted to DB test transaction: " 
-         
-      );
-    else console.log("Error occured: " + err.message);
-  });});
+
 
 describe('GET api/node/blocks', () => {
   it('should satisfy OpenAPI spec', async() => {
