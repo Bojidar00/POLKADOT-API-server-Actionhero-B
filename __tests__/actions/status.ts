@@ -120,7 +120,7 @@ describe('GET /api/node/address/balance/{adr}', () => {
   });
 });
 
-describe('POST /api/node/address/transactions/{x}/{n}', () => {
+/*describe('POST /api/node/address/transactions/{x}/{n}', () => {
   it('should satisfy OpenAPI spec', async() => {
       const queryParam = { accountId: '12xtAYsRUrmbniiWQqJtECiBQrMn8AypQcXhnQAc6RB6XkLW' };
       const x = 5;
@@ -133,7 +133,7 @@ describe('POST /api/node/address/transactions/{x}/{n}', () => {
       expect(res).toSatisfyApiSpec();
   });
 });
-
+*/
 describe('GET /api/node/transactions/count/', () => {
   it('should satisfy OpenAPI spec', async() => {
       const res = await axios.get('http://0.0.0.0:8080/api/node/transactions/count/');
