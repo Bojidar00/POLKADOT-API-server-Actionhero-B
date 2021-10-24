@@ -18,7 +18,11 @@ export class LastBlock extends Action {
     const connectApi = apiConnection.getNodeConnection().then((api) => {
       return api;
     });
+    try {
        return await connectApi.then(api => api.rpc.chain.getBlock());
+      } catch (error) {
+        return "Some error occurred!";
+    }
   
   }
 }

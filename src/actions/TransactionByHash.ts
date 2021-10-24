@@ -24,9 +24,12 @@ export class TransactionByHash extends Action {
         db.connect().then(console.log("Connected to PostgreSQL"));
         return db;
     });
-      
+      try {
        return await connectDb.then(async db => { 
          await db.query(`SELECT * FROM transactions WHERE hash='${params.hash}'`);})
+        } catch (error) {
+          return "Some error occurred!";
+      }
   
   }
 }

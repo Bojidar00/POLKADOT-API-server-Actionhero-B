@@ -22,9 +22,12 @@ export class TransactionsCount extends Action {
         db.connect().then(console.log("Connected to PostgreSQL"));
         return db;
     });
-      
+      try {
        return await connectDb.then(async db => { 
          await db.query(`SELECT COUNT(*) AS count FROM transactions`);})
+        } catch (error) {
+          return "Some error occurred!";
+      }
   
   }
 }

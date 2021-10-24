@@ -22,8 +22,12 @@ export class BlockHashByNumber extends Action {
       return api;
     });
     var blocks=[];
+    try{
     blocks.push(await connectApi.then(api => api.rpc.chain.getBlockHash(params.number)));
    
        return {blocks};
+      } catch (error) {
+        return {"response":"Some error occurred!"};
+    }
   }
 }

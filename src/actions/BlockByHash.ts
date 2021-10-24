@@ -21,8 +21,10 @@ export class BlockByHash extends Action {
     const connectApi = apiConnection.getNodeConnection().then((api) => {
         return api;
       });
-      
+      try {
        return await connectApi.then(api => api.rpc.chain.getBlock(params.hash));
-  
+      } catch (error) {
+        return "Some error occurred!";
+    }
   }
 }

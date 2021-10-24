@@ -26,12 +26,15 @@ export class XBlocksAfterN extends Action {
     var x=params.x;
     var n=params.n;
     var blocks=[];
-
+try{
     for (var i =0;i<x;i++){
                 blocks.push(await connectApi.then(api => api.rpc.chain.getBlockHash(n)));
                 n--;
     }
        return blocks;
+      } catch (error) {
+        return {"response":"Some error occurred!"};
+    }
   
   }
 }

@@ -24,9 +24,11 @@ export class AccountTransactions extends Action {
         db.connect().then(console.log("Connected to PostgreSQL"));
         return db;
     });
-      
+      try {
        return await connectDb.then(async db => { 
          await db.query(`SELECT * FROM transactions WHERE recipient='${params.account}' OR sender='${params.account}'`);})
-  
+        } catch (error) {
+          return "Some error occurred!";
+      }
   }
 }

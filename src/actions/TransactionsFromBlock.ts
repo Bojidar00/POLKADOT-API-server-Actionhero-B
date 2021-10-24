@@ -24,9 +24,13 @@ export class TransactionsFromBlock extends Action {
         db.connect().then(console.log("Connected to PostgreSQL"));
         return db;
     });
+    try{
       
        return await connectDb.then(async db => { 
          await db.query(`SELECT * FROM transactions WHERE block_hash='${params.hash}`);})
+        } catch (error) {
+          return "Some error occurred!";
+      }
   
   }
 }
