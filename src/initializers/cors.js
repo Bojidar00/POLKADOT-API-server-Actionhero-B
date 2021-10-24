@@ -43,12 +43,7 @@ module.exports = class CORS extends Initializer {
         // Check incoming requests for authentication requirements
         // NOTE: Doesn't work because OPTIONS requests don't get processed through middleware. Left here as
         // documentation for that fact.
-        api.actions.addMiddleware({
-            name: 'Request Processing : CORS',
-            global: true,
-            priority: 50,
-            preProcessor: processCORS,
-        });
+       
 
         const webServer = api.servers.servers.web;
         webServer.respondToOptions = connection => {
