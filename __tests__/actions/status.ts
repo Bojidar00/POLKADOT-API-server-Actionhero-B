@@ -64,7 +64,7 @@ describe('GET /api/node/blocks/num/{num}', () => {
 
 describe('POST /api/node/blocks/hash', () => {
   it('should satisfy OpenAPI spec', async() => {
-      const queryParam = { hash: '0x4f61e8e6017cce5a10e2de7340061a037895411c19e7bc27f607953d8a56a943' };
+      const queryParam = { hash: '0xc0096358534ec8d21d01d34b836eed476a1c343f8724fa2153dc0725ad797a90' };
 
       const res = await axios.post('http://0.0.0.0:8080/api/node/blocks/hash', queryParam);
 
@@ -167,7 +167,7 @@ describe('POST /api/node/transactions/hash', () => {
       expect(res).toSatisfyApiSpec();
   });
 });
-
+/*
 describe('GET /api/node/transactions/{x}/{n}', () => {
   it('should satisfy OpenAPI spec', async() => {
       const x = 5;
@@ -180,3 +180,4 @@ describe('GET /api/node/transactions/{x}/{n}', () => {
       expect(res).toSatisfyApiSpec();
   });
 });
+*/
