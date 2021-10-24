@@ -144,7 +144,7 @@ export class Swagger extends Action {
         ? config.servers.web.allowedRequestHosts[0]
             .replace("https://", "")
             .replace("http://", "")
-        : `localhost:${config.servers.web.port}`) as string,
+        : `node5.blackseachain.com:${config.servers.web.port}`) as string,
       basePath: `/api/${API_VERSION}`,
       // tags: tags.map((tag) => {
       //   return { name: tag, description: `topic: ${tag}` };
